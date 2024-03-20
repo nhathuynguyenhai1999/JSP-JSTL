@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "CustomerListServlet", urlPatterns = {"/CustomerList"})
+@WebServlet(name = "CustomerListServlet", urlPatterns = {"/customers"})
 public class CustomerListServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -17,7 +17,7 @@ public class CustomerListServlet extends HttpServlet {
 
         // Chuyển hướng dữ liệu sang JSP
         request.setAttribute("customerList", customerList);
-        request.getRequestDispatcher("/customerList.jsp").forward(request, response);
+        request.getRequestDispatcher("/index.jsp").forward(request, response);
     }
 
     // Phương thức giả lập để lấy danh sách khách hàng (thay thế bằng cách lấy từ nguồn dữ liệu thực tế)
@@ -30,7 +30,7 @@ public class CustomerListServlet extends HttpServlet {
         customerList.add(new Customer("Alice Smith", "1985-05-20", "456 Oak St, Anycity", "images/alice.jpg"));
         customerList.add(new Customer("Bob Johnson", "1978-09-10", "789 Elm St, Anywhere", "images/bob.jpg"));
         // Thêm các khách hàng khác vào đây...
-        return customerList;
+                return customerList;
     }
 }
 
